@@ -1,23 +1,589 @@
-:root{
-  --accent:#7aa7b8; /* muted teal */
-  --bg:#0e1113; /* softer dark background */
-  --muted:#9aa3ad; /* less bright muted color */
-  --content-bg:#121416; /* subtle card bg */
-  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+/* ============= Global Styles ============= */
+:root {
+    --primary-color: #FFD60A;
+    --dark-color: #1a1a1a;
+    --secondary-color: #FFC300;
+    --light-color: #f8f9fa;
+    --success-color: #28a745;
 }
-*{box-sizing:border-box}
-body{background:var(--bg); color:#dfe8ec; margin:0; font-family:inherit}
-.hero{position:relative; padding:5.5rem 0; background:linear-gradient(180deg, rgba(14,17,19,0.85), rgba(18,20,22,0.85));}
-.hero .overlay{position:absolute; inset:0; background-image:radial-gradient(circle at 10% 10%, rgba(122,167,184,0.04), transparent 18%), radial-gradient(circle at 90% 80%, rgba(122,167,184,0.02), transparent 22%);}
-.hero .neon{color:var(--accent); text-shadow:none;}
-.hero .hero-card img{transform:translateY(-6px); filter:contrast(.95) saturate(.9)}
-.card.bg-dark{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); border:1px solid rgba(255,255,255,0.02)}
-.gallery-item img{height:160px; object-fit:cover; transition:transform .18s ease, box-shadow .18s ease; border-radius:6px}
-.gallery-item img:hover{transform:scale(1.02); box-shadow:0 6px 18px rgba(0,0,0,0.45)}
-footer{border-top:1px solid rgba(255,255,255,0.02)}
-code{background:#0f1416; padding:.15rem .4rem; border-radius:.25rem; color:var(--muted)}
-/* responsive tweaks */
-@media (max-width:767px){
-  .gallery-item img{height:140px}
-  .hero{padding:3rem 0}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ============= Hero Section ============= */
+.hero-section {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="30" cy="70" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="30" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+    animation: float 20s ease-in-out infinite;
+    opacity: 0.5;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    animation: slideInDown 1s ease-out;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: slideInUp 1s ease-out 0.2s both;
+}
+
+.hero-section .btn {
+    animation: slideInUp 1s ease-out 0.4s both;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    padding: 12px 40px;
+}
+
+.hero-section .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 214, 10, 0.4);
+}
+
+/* ============= Navbar Styles ============= */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: var(--primary-color) !important;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.navbar-brand i {
+    margin-right: 10px;
+}
+
+.nav-link {
+    font-weight: 500;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+    color: #fff !important;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+    text-shadow: 0 0 10px rgba(255, 214, 10, 0.5);
+}
+
+/* ============= About Section ============= */
+#tentang {
+    padding: 80px 0;
+}
+
+#tentang h2 {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    position: relative;
+    padding-bottom: 20px;
+}
+
+#tentang h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+#tentang img {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#tentang img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 50px rgba(255, 214, 10, 0.3);
+}
+
+.skill-badge {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #000;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 214, 10, 0.3);
+}
+
+.skill-badge i {
+    margin-right: 8px;
+}
+
+/* ============= Hobby Cards ============= */
+#hobi {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%);
+}
+
+#hobi h2 {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    position: relative;
+    padding-bottom: 20px;
+}
+
+#hobi h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.hobby-card {
+    padding: 30px 20px;
+    background: white;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.hobby-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 214, 10, 0.2);
+    border-color: var(--primary-color);
+}
+
+.hobby-card .icon-box {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 2rem;
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.hobby-card:hover .icon-box {
+    transform: scale(1.15) rotate(10deg);
+}
+
+.hobby-card h4 {
+    margin-top: 15px;
+    color: var(--dark-color);
+    font-size: 1.2rem;
+}
+
+.hobby-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ============= Tricks Section ============= */
+#trik {
+    padding: 80px 0;
+}
+
+#trik h2 {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    position: relative;
+    padding-bottom: 20px;
+}
+
+#trik h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.trick-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 5px solid var(--primary-color);
+}
+
+.trick-card:hover {
+    transform: translateX(10px) translateY(-5px);
+    box-shadow: 0 15px 35px rgba(255, 214, 10, 0.2);
+}
+
+.trick-card h5 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.trick-card p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.trick-card .badge {
+    margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 0.85rem;
+}
+
+/* ============= Gallery Section ============= */
+#galeri {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%);
+}
+
+#galeri h2 {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    position: relative;
+    padding-bottom: 20px;
+}
+
+#galeri h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    height: 300px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1) rotate(2deg);
+    filter: brightness(0.8);
+}
+
+.gallery-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    padding: 30px 20px;
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.gallery-item .overlay h5 {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* ============= Contact Section ============= */
+#kontak {
+    padding: 80px 0;
+}
+
+#kontak h2 {
+    font-size: 2.5rem;
+    color: white;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+#kontak h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.form-control {
+    border: 2px solid #444;
+    background: #2a2a2a;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background: #333;
+    border-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 214, 10, 0.3);
+}
+
+.form-label {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.contact-item {
+    margin-bottom: 25px;
+}
+
+.contact-item i {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.contact-item h5 {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-item p {
+    color: #ccc;
+}
+
+.btn-outline-warning {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-warning:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* ============= Animations ============= */
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ============= Footer ============= */
+footer {
+    padding: 20px 0;
+    background: #000 !important;
+    border-top: 2px solid var(--primary-color);
+}
+
+footer p {
+    color: #ccc;
+    margin: 0;
+}
+
+/* ============= Responsive Design ============= */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+
+    #tentang h2,
+    #hobi h2,
+    #trik h2,
+    #galeri h2,
+    #kontak h2 {
+        font-size: 1.8rem;
+    }
+
+    .hobby-card {
+        margin-bottom: 20px;
+    }
+
+    .gallery-item {
+        height: 250px;
+    }
+
+    .nav-link {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+
+    .skill-badge {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .hero-section .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    #tentang h2,
+    #hobi h2,
+    #trik h2,
+    #galeri h2,
+    #kontak h2 {
+        font-size: 1.5rem;
+    }
+
+    .gallery-item {
+        height: 200px;
+    }
+}
+
+/* ============= Scrollbar Styling ============= */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* ============= Utility Classes ============= */
+.text-warning {
+    color: var(--primary-color) !important;
+}
+
+.btn-warning {
+    background: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #000 !important;
+    font-weight: bold;
+}
+
+.btn-warning:hover {
+    background: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
+
+.bg-light {
+    background-color: #f9f9f9 !important;
 }

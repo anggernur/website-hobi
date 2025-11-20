@@ -1,153 +1,330 @@
-<!doctype html>
+<!DOCTYPE html>
+<!--
+    TUGAS UTS PEMROGRAMAN WEB MOBILE
+    ================================
+    Nama: Nendi Angger Nurcahyo
+    NIM: 233210014
+    Hobi: Bermain Skateboard
+    Tanggal: November 20, 2025
+-->
 <html lang="id">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Skate & Night Riding — Hobi Saya</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skateboarding Hobby</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="#">SkateNight</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navmenu">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
-            <li class="nav-item"><a class="nav-link" href="#gallery">Galeri</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
-          </ul>
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">
+                <i class="fas fa-skateboard"></i> SKATEBOARD LIFE
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hobi">Hobi Saya</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
-    <header class="hero text-white">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <h1 class="display-5 fw-bold neon">Skate & Night Riding</h1>
-            <p class="lead">Hobi saya adalah bermain skate dan menikmati ketenangan night riding — gabungan adrenalin, skill, dan lampu kota.</p>
-            <p>
-              <a class="btn btn-primary btn-lg me-2" href="#gallery">Lihat Galeri</a>
-              <a class="btn btn-outline-light btn-lg" href="#contact">Hubungi Saya</a>
-            </p>
-          </div>
-          <div class="col-lg-6 d-none d-lg-block">
-            <div class="hero-card">
-              <img src="https://source.unsplash.com/900x600/?skateboard,night,city" alt="skate night" class="img-fluid rounded shadow-lg">
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-white d-flex align-items-center">
+        <div class="container text-center">
+            <div class="mb-4 p-3" style="border: 2px solid #FFD60A; border-radius: 10px; display: inline-block;">
+                <p class="mb-0" style="font-size: 0.9rem;">
+                    <strong>TUGAS UTS PEMROGRAMAN WEB MOBILE</strong><br>
+                    <strong>Nendi Angger Nurcahyo</strong> | <strong>233210014</strong>
+                </p>
             </div>
-          </div>
+            <h1 class="display-3 fw-bold mb-4">SKATEBOARD PASSION</h1>
+            <p class="lead mb-4">Mengeksplorasi Dunia Skating dengan Penuh Semangat</p>
+            <a href="#hobi" class="btn btn-warning btn-lg">Pelajari Lebih Lanjut</a>
         </div>
-      </div>
-    </header>
+    </section>
 
-    <main class="py-5">
-      <section id="about" class="container py-5">
-        <div class="row g-4 align-items-center">
-          <div class="col-md-6">
-            <h2>Tentang Hobi Saya</h2>
-            <p>Saya suka bermain skate — baik untuk latihan trick maupun sekadar cruising. Malam hari, saya sering melakukan night riding: suasana lebih tenang, kota yang lampunya dramatis, dan sensasi meluncur di bawah bintang serta streetlight.</p>
-            <ul class="list-unstyled">
-              <li>• Trik favorit: manuals, ollie, dan beberapa flip sederhana</li>
-              <li>• Gear: deck medium, bearings cepat, lampu depan untuk night rides</li>
-              <li>• Nilai keselamatan: helm dan lampu wajib</li>
-            </ul>
-          </div>
-          <div class="col-md-6">
-            <div class="card bg-dark text-white shadow-sm">
-              <img src="https://source.unsplash.com/800x600/?skatepark,skateboarding" class="card-img-top" alt="about skate">
-              <div class="card-body">
-                <h5 class="card-title">Kenapa Night Riding?</h5>
-                <p class="card-text">Night riding memberikan mood berbeda: lebih fokus, city lights sebagai background, dan komunitas rider yang ramah.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="gallery" class="bg-dark text-white py-5">
+    <!-- About Section -->
+    <section id="tentang" class="py-5 bg-light">
         <div class="container">
-          <h2 class="mb-4">Galeri Foto</h2>
-          <p class="text-muted">Tambahkan foto Anda ke folder <code>images/</code> (misal: photo1.jpg, photo2.jpg ...). Klik gambar untuk melihat lebih besar.</p>
-          <div class="row g-3 mt-3">
-            <!-- repeatable gallery items -->
-            <div class="col-6 col-md-4 col-lg-3">
-              <a href="https://unsplash.com/s/photos/skateboard-kickflip" class="d-block gallery-item" target="_blank" rel="noopener" data-bs-toggle="modal" data-bs-target="#lightbox" data-bs-img="https://source.unsplash.com/1600x1000/?skateboard,kickflip" data-bs-caption="Night kickflip" data-bs-source="https://unsplash.com/s/photos/skateboard-kickflip">
-                <img src="https://source.unsplash.com/400x300/?skateboard,kickflip" alt="photo1" class="img-fluid rounded">
-              </a>
+            <h2 class="text-center mb-5 fw-bold">TENTANG SAYA</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4">
+                    <img src="images/skater.jpg" alt="Skater" class="img-fluid rounded-3 shadow">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="fw-bold mb-3">Nendi Angger Nurcahyo - Skateboard Enthusiast</h3>
+                    <p class="mb-3">Saya dengan ini mengumpulkan tugas UTS Pemrograman Web Mobile dengan tema hobi bermain skateboard. 
+                    Saya adalah seorang penggemar skateboard yang passionate dalam mempelajari tricks dan teknik skating. 
+                    Skateboarding bukan hanya hobi, tetapi gaya hidup yang mengajarkan saya tentang persistensi, kreativitas, dan keberanian.</p>
+                    <p class="mb-3">Dengan pengalaman bertahun-tahun di skateboard park, saya telah menguasai berbagai teknik dan terus 
+                    mengembangkan skill untuk mencapai level yang lebih tinggi.</p>
+                    <div class="d-flex gap-3">
+                        <div class="skill-badge">
+                            <i class="fas fa-star"></i> Tricks
+                        </div>
+                        <div class="skill-badge">
+                            <i class="fas fa-medal"></i> Kompetisi
+                        </div>
+                        <div class="skill-badge">
+                            <i class="fas fa-heart"></i> Passion
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-6 col-md-4 col-lg-3">
-              <a href="https://unsplash.com/s/photos/skateboard-city-night" class="d-block gallery-item" target="_blank" rel="noopener" data-bs-toggle="modal" data-bs-target="#lightbox" data-bs-img="https://source.unsplash.com/1600x1000/?skateboard,city,night" data-bs-caption="Cruising under the streetlights" data-bs-source="https://unsplash.com/s/photos/skateboard-city-night">
-                <img src="https://source.unsplash.com/400x300/?skateboard,city,night" alt="photo2" class="img-fluid rounded">
-              </a>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3">
-              <a href="https://unsplash.com/s/photos/skateboarding-group" class="d-block gallery-item" target="_blank" rel="noopener" data-bs-toggle="modal" data-bs-target="#lightbox" data-bs-img="https://source.unsplash.com/1600x1000/?skateboarding,group" data-bs-caption="Group ride" data-bs-source="https://unsplash.com/s/photos/skateboarding-group">
-                <img src="https://source.unsplash.com/400x300/?skateboarding,group" alt="photo3" class="img-fluid rounded">
-              </a>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3">
-              <a href="https://unsplash.com/s/photos/city-night-skate" class="d-block gallery-item" target="_blank" rel="noopener" data-bs-toggle="modal" data-bs-target="#lightbox" data-bs-img="https://source.unsplash.com/1600x1000/?city,night,skate" data-bs-caption="City glow" data-bs-source="https://unsplash.com/s/photos/city-night-skate">
-                <img src="https://source.unsplash.com/400x300/?city,night,skate" alt="photo4" class="img-fluid rounded">
-              </a>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <section id="contact" class="container py-5">
-        <h2>Kontak</h2>
-        <p>Ingin bergabung riding atau butuh info? Kirim pesan singkat.</p>
-        <div class="row">
-          <div class="col-md-6">
-            <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
-              <div class="mb-3">
-                <label class="form-label">Nama</label>
-                <input class="form-control" type="text" name="name" placeholder="Nama">
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Pesan</label>
-                <textarea class="form-control" rows="4" name="message"></textarea>
-              </div>
-              <button class="btn btn-primary">Kirim</button>
-            </form>
-          </div>
-          <div class="col-md-6">
-            <h5>Info Singkat</h5>
-            <p>Lokasi night rides: biasanya di area taman kota atau boulevard. Pastikan membawa helm dan lampu.</p>
-          </div>
+    <!-- Hobby Section -->
+    <section id="hobi" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">MENGAPA SAYA SUKA SKATEBOARD?</h2>
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="hobby-card h-100">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <h4 class="fw-bold">Kebebasan</h4>
+                        <p>Skateboard memberikan kebebasan untuk mengekspresikan diri dan menciptakan trik unik sesuai gaya personal.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="hobby-card h-100">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h4 class="fw-bold">Kesehatan</h4>
+                        <p>Skateboarding adalah olahraga yang bagus untuk kesehatan fisik, meningkatkan keseimbangan dan stamina.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="hobby-card h-100">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4 class="fw-bold">Komunitas</h4>
+                        <p>Bergabung dengan komunitas skater yang saling mendukung dan berbagi passion yang sama tentang skateboard.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="hobby-card h-100">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4 class="fw-bold">Mental Strength</h4>
+                        <p>Menghadapi tantangan dan kegagalan dalam belajar tricks membangun kepercayaan diri dan ketangguhan mental.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
-    </main>
+    </section>
 
-    <footer class="py-4 bg-black text-white">
-      <div class="container d-flex justify-content-between">
-        <div>© 2025 SkateNight</div>
-        <div>Made for UTS — desain oleh Anda</div>
-      </div>
+    <!-- Skills Section -->
+    <section id="trik" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">TRIK FAVORIT SAYA</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="trick-card">
+                        <h5 class="fw-bold text-warning">Kickflip</h5>
+                        <p>Trik dasar dimana board diputar 360 derajat di bawah kaki Anda. Trik ini adalah fondasi dari banyak trik lainnya.</p>
+                        <span class="badge bg-success">Intermediate</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="trick-card">
+                        <h5 class="fw-bold text-warning">Olliebackflip</h5>
+                        <p>Kombinasi Ollie dan Kickflip dengan putaran vertikal. Trik ini membutuhkan timing dan kontrol yang sempurna.</p>
+                        <span class="badge bg-warning text-dark">Advanced</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="trick-card">
+                        <h5 class="fw-bold text-warning">Manual</h5>
+                        <p>Mengangkat roda depan dan keseimbangan di atas roda belakang. Trik ini menguji keseimbangan dan kontrol Anda.</p>
+                        <span class="badge bg-success">Intermediate</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="trick-card">
+                        <h5 class="fw-bold text-warning">Heelflip</h5>
+                        <p>Mirip dengan Kickflip namun menggunakan heel flick. Trik yang stylish dan terlihat sangat keren di skate park.</p>
+                        <span class="badge bg-warning text-dark">Advanced</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="trick-card">
+                        <h5 class="fw-bold text-warning">Grind</h5>
+                        <p>Meluncur di atas obstacle menggunakan trucks skateboard. Trik ini sangat populer di street skating.</p>
+                        <span class="badge bg-success">Intermediate</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="trick-card">
+                        <h5 class="fw-bold text-warning">Varial</h5>
+                        <p>Memutar board 180 derajat tanpa flip. Trik foundational yang digunakan dalam banyak kombinasi trik.</p>
+                        <span class="badge bg-info">Beginner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeri" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">GALERI FOTOKU</h2>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="images/skate1.jpg" alt="Skating at Park" class="img-fluid rounded-3">
+                        <div class="overlay">
+                            <h5>Skating di Park</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="images/skate2.jpg" alt="Trick Performance" class="img-fluid rounded-3">
+                        <div class="overlay">
+                            <h5>Performing Tricks</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="images/skate3.jpg" alt="Street Skating" class="img-fluid rounded-3">
+                        <div class="overlay">
+                            <h5>Street Skating</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="images/skate4.jpg" alt="Community" class="img-fluid rounded-3">
+                        <div class="overlay">
+                            <h5>Bersama Komunitas</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="images/skate5.jpg" alt="Competition" class="img-fluid rounded-3">
+                        <div class="overlay">
+                            <h5>Kompetisi Skateboard</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="images/skate6.jpg" alt="Equipment" class="img-fluid rounded-3">
+                        <div class="overlay">
+                            <h5>Koleksi Board</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="py-5 bg-dark text-white">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">HUBUNGI SAYA</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="name" placeholder="Masukkan nama Anda" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Masukkan email Anda" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Pesan</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning btn-lg w-100">Kirim Pesan</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="contact-info">
+                        <h4 class="mb-4 fw-bold">Informasi Kontak</h4>
+                        <div class="contact-item mb-4">
+                            <i class="fas fa-user fa-2x text-warning mb-3"></i>
+                            <h5>Data Diri</h5>
+                            <p><strong>Nendi Angger Nurcahyo</strong><br>NIM: 233210014</p>
+                        </div>
+                        <div class="contact-item mb-4">
+                            <i class="fas fa-map-marker-alt fa-2x text-warning mb-3"></i>
+                            <h5>Lokasi</h5>
+                            <p>Skateboard Park Lokal, Indonesia</p>
+                        </div>
+                        <div class="contact-item mb-4">
+                            <i class="fas fa-phone fa-2x text-warning mb-3"></i>
+                            <h5>Telepon</h5>
+                            <p>+62 812-3456-7890</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope fa-2x text-warning mb-3"></i>
+                            <h5>Email</h5>
+                            <p>nendi.angger@student.edu</p>
+                        </div>
+                        <div class="mt-4">
+                            <h5 class="mb-3">Follow Media Sosial</h5>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="btn btn-outline-warning rounded-circle p-3"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="btn btn-outline-warning rounded-circle p-3"><i class="fab fa-facebook"></i></a>
+                                <a href="#" class="btn btn-outline-warning rounded-circle p-3"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="btn btn-outline-warning rounded-circle p-3"><i class="fab fa-tiktok"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white text-center py-4">
+        <div class="container">
+            <p class="mb-2"><strong>TUGAS UTS PEMROGRAMAN WEB MOBILE</strong></p>
+            <p class="mb-2">
+                Nama: <strong>Nendi Angger Nurcahyo</strong><br>
+                NIM: <strong>233210014</strong><br>
+                Hobi: <strong>Bermain Skateboard</strong>
+            </p>
+            <hr class="my-2" style="border-color: #666;">
+            <p class="mb-0">&copy; 2025 Skateboard Hobby Website. All Rights Reserved.</p>
+            <p class="small mt-2">Dibuat dengan <i class="fas fa-heart text-danger"></i> oleh Skater Passion</p>
+        </div>
     </footer>
 
-    <!-- Lightbox Modal -->
-    <div class="modal fade" id="lightbox" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content bg-dark text-white">
-          <div class="modal-body text-center p-0">
-            <img src="" alt="" id="lightbox-img" class="img-fluid w-100">
-            <p class="m-2" id="lightbox-caption"></p>
-          </div>
-          <div class="modal-footer border-0">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
 </html>
