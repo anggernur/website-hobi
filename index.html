@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skate & Night Riding — Hobi Saya</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">SkateNight</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+            <li class="nav-item"><a class="nav-link" href="#gallery">Galeri</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero text-white">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold neon">Skate & Night Riding</h1>
+            <p class="lead">Hobi saya adalah bermain skate dan menikmati ketenangan night riding — gabungan adrenalin, skill, dan lampu kota.</p>
+            <p>
+              <a class="btn btn-primary btn-lg me-2" href="#gallery">Lihat Galeri</a>
+              <a class="btn btn-outline-light btn-lg" href="#contact">Hubungi Saya</a>
+            </p>
+          </div>
+          <div class="col-lg-6 d-none d-lg-block">
+            <div class="hero-card">
+              <img src="https://source.unsplash.com/900x600/?skateboard,night,city" alt="skate night" class="img-fluid rounded shadow-lg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="py-5">
+      <section id="about" class="container py-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-6">
+            <h2>Tentang Hobi Saya</h2>
+            <p>Saya suka bermain skate — baik untuk latihan trick maupun sekadar cruising. Malam hari, saya sering melakukan night riding: suasana lebih tenang, kota yang lampunya dramatis, dan sensasi meluncur di bawah bintang serta streetlight.</p>
+            <ul class="list-unstyled">
+              <li>• Trik favorit: manuals, ollie, dan beberapa flip sederhana</li>
+              <li>• Gear: deck medium, bearings cepat, lampu depan untuk night rides</li>
+              <li>• Nilai keselamatan: helm dan lampu wajib</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <div class="card bg-dark text-white shadow-sm">
+              <img src="https://source.unsplash.com/800x600/?skatepark,skateboarding" class="card-img-top" alt="about skate">
+              <div class="card-body">
+                <h5 class="card-title">Kenapa Night Riding?</h5>
+                <p class="card-text">Night riding memberikan mood berbeda: lebih fokus, city lights sebagai background, dan komunitas rider yang ramah.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="bg-dark text-white py-5">
+        <div class="container">
+          <h2 class="mb-4">Galeri Foto</h2>
+          <p class="text-muted">Tambahkan foto Anda ke folder <code>images/</code> (misal: photo1.jpg, photo2.jpg ...). Klik gambar untuk melihat lebih besar.</p>
+          <div class="row g-3 mt-3">
+            <!-- repeatable gallery items -->
+            <div class="col-6 col-md-4 col-lg-3">
+              <a href="https://unsplash.com/s/photos/skateboard-kickflip" class="d-block gallery-item" target="_blank" rel="noopener" data-bs-toggle="modal" data-bs-target="#lightbox" data-bs-img="https://source.unsplash.com/1600x1000/?skateboard,kickflip" data-bs-caption="Night kickflip" data-bs-source="https://unsplash.com/s/photos/skateboard-kickflip">
+                <img src="https://source.unsplash.com/400x300/?skateboard,kickflip" alt="photo1" class="img-fluid rounded">
+              </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <a href="https://unsplash.com/s/photos/skateboard-city-night" class="d-block gallery-item" target="_blank" rel="noopener" data-bs-toggle="modal" data-bs-target="#lightbox" data-bs-img="https://source.unsplash.com/1600x1000/?skateboard,city,night" data-bs-caption="Cruising under the streetlights" data-bs-source="https://unsplash.com/s/photos/skateboard-city-night">
+                <img src="https://source.unsplash.com/400x300/?skateboard,city,night" alt="photo2" class="img-fluid rounded">
+              </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <a href="https://unsplash.com/s/photos/skateboarding-group" class="d-block gallery-item" target="_blank" rel="noopener" data-bs-toggle="modal" data-bs-target="#lightbox" data-bs-img="https://source.unsplash.com/1600x1000/?skateboarding,group" data-bs-caption="Group ride" data-bs-source="https://unsplash.com/s/photos/skateboarding-group">
+                <img src="https://source.unsplash.com/400x300/?skateboarding,group" alt="photo3" class="img-fluid rounded">
+              </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <a href="https://unsplash.com/s/photos/city-night-skate" class="d-block gallery-item" target="_blank" rel="noopener" data-bs-toggle="modal" data-bs-target="#lightbox" data-bs-img="https://source.unsplash.com/1600x1000/?city,night,skate" data-bs-caption="City glow" data-bs-source="https://unsplash.com/s/photos/city-night-skate">
+                <img src="https://source.unsplash.com/400x300/?city,night,skate" alt="photo4" class="img-fluid rounded">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="container py-5">
+        <h2>Kontak</h2>
+        <p>Ingin bergabung riding atau butuh info? Kirim pesan singkat.</p>
+        <div class="row">
+          <div class="col-md-6">
+            <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
+              <div class="mb-3">
+                <label class="form-label">Nama</label>
+                <input class="form-control" type="text" name="name" placeholder="Nama">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Pesan</label>
+                <textarea class="form-control" rows="4" name="message"></textarea>
+              </div>
+              <button class="btn btn-primary">Kirim</button>
+            </form>
+          </div>
+          <div class="col-md-6">
+            <h5>Info Singkat</h5>
+            <p>Lokasi night rides: biasanya di area taman kota atau boulevard. Pastikan membawa helm dan lampu.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-4 bg-black text-white">
+      <div class="container d-flex justify-content-between">
+        <div>© 2025 SkateNight</div>
+        <div>Made for UTS — desain oleh Anda</div>
+      </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="modal fade" id="lightbox" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-white">
+          <div class="modal-body text-center p-0">
+            <img src="" alt="" id="lightbox-img" class="img-fluid w-100">
+            <p class="m-2" id="lightbox-caption"></p>
+          </div>
+          <div class="modal-footer border-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

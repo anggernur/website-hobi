@@ -1,0 +1,23 @@
+:root{
+  --accent:#7aa7b8; /* muted teal */
+  --bg:#0e1113; /* softer dark background */
+  --muted:#9aa3ad; /* less bright muted color */
+  --content-bg:#121416; /* subtle card bg */
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+*{box-sizing:border-box}
+body{background:var(--bg); color:#dfe8ec; margin:0; font-family:inherit}
+.hero{position:relative; padding:5.5rem 0; background:linear-gradient(180deg, rgba(14,17,19,0.85), rgba(18,20,22,0.85));}
+.hero .overlay{position:absolute; inset:0; background-image:radial-gradient(circle at 10% 10%, rgba(122,167,184,0.04), transparent 18%), radial-gradient(circle at 90% 80%, rgba(122,167,184,0.02), transparent 22%);}
+.hero .neon{color:var(--accent); text-shadow:none;}
+.hero .hero-card img{transform:translateY(-6px); filter:contrast(.95) saturate(.9)}
+.card.bg-dark{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); border:1px solid rgba(255,255,255,0.02)}
+.gallery-item img{height:160px; object-fit:cover; transition:transform .18s ease, box-shadow .18s ease; border-radius:6px}
+.gallery-item img:hover{transform:scale(1.02); box-shadow:0 6px 18px rgba(0,0,0,0.45)}
+footer{border-top:1px solid rgba(255,255,255,0.02)}
+code{background:#0f1416; padding:.15rem .4rem; border-radius:.25rem; color:var(--muted)}
+/* responsive tweaks */
+@media (max-width:767px){
+  .gallery-item img{height:140px}
+  .hero{padding:3rem 0}
+}
