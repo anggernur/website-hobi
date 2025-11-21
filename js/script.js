@@ -33,16 +33,57 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// ============= Page Transition Animation Handler ============= 
+function addPageTransitionAnimation() {
+    // Create transition overlay
+    const overlay = document.createElement('div');
+    overlay.id = 'pageTransitionOverlay';
+    overlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #FFD60A, #FFC300);
+        z-index: 1000;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+    `;
+    document.body.appendChild(overlay);
+    return overlay;
+}
+
+const pageOverlay = addPageTransitionAnimation();
+
 // ============= Smooth Scroll & Active Nav Link ============= 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            // Add exit animation
+            const currentSection = document.querySelector('section[id]');
+            if (currentSection) {
+                currentSection.style.animation = 'fadeOutDown 0.4s ease-in forwards';
+            }
+            
+            // Transition effect
+            pageOverlay.style.opacity = '0.1';
+            
+            // Scroll after short delay
+            setTimeout(() => {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                pageOverlay.style.opacity = '0';
+            }, 200);
+            
+            // Enter animation for target section
+            setTimeout(() => {
+                target.style.animation = 'slideInUp 0.6s ease-out forwards';
+            }, 250);
         }
     });
 });
@@ -79,6 +120,110 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ============= Enhanced Page Transition with Multiple Animation Styles ============= 
+const transitionAnimations = [
+    'pageSlideInUp',
+    'pageSlideInDown',
+    'pageSlideInLeft',
+    'pageSlideInRight',
+    'zoomInPage',
+    'blurInPage'
+];
+
+let currentAnimationIndex = 0;
+
+function getNextAnimation() {
+    const animation = transitionAnimations[currentAnimationIndex];
+    currentAnimationIndex = (currentAnimationIndex + 1) % transitionAnimations.length;
+    return animation;
+}
+
+// Create scroll progress indicator
+const progressBar = document.createElement('div');
+progressBar.id = 'scrollProgress';
+progressBar.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FFD60A, #FFC300, #45B7D1);
+    width: 0%;
+    z-index: 999;
+    transition: width 0.2s ease;
+    box-shadow: 0 0 10px rgba(255, 214, 10, 0.5);
+`;
+document.body.appendChild(progressBar);
+
+// Update progress bar on scroll
+window.addEventListener('scroll', () => {
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.scrollY / windowHeight) * 100;
+    progressBar.style.width = scrolled + '%';
+});
+
+// ============= Smooth Scroll with Enhanced Transition ============= 
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (!target) return;
+        
+        // Get all sections
+        const allSections = document.querySelectorAll('section[id]');
+        const targetSection = target.closest('section[id]');
+        
+        // Add exit animation to all visible sections
+        allSections.forEach(section => {
+            if (section !== targetSection) {
+                section.style.animation = 'fadeOutDown 0.4s ease-in forwards';
+                section.style.pointerEvents = 'none';
+            }
+        });
+        
+        // Show transition overlay
+        pageOverlay.style.opacity = '0.2';
+        pageOverlay.style.pointerEvents = 'auto';
+        
+        // Smooth scroll
+        setTimeout(() => {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            pageOverlay.style.opacity = '0';
+            pageOverlay.style.pointerEvents = 'none';
+        }, 200);
+        
+        // Add entrance animation with rotation effect
+        setTimeout(() => {
+            if (targetSection) {
+                const nextAnimation = getNextAnimation();
+                targetSection.style.animation = `${nextAnimation} 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards`;
+                targetSection.style.pointerEvents = 'auto';
+                
+                // Animate inner content
+                const innerElements = targetSection.querySelectorAll('h2, p, .hobby-card, .trick-card, .gallery-item');
+                innerElements.forEach((el, index) => {
+                    el.style.animation = 'none';
+                    el.style.opacity = '0';
+                    setTimeout(() => {
+                        el.style.animation = `fadeInUp 0.5s ease-out ${index * 0.05}s forwards`;
+                    }, 400);
+                });
+            }
+        }, 250);
+        
+        // Close mobile menu if open
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+            document.querySelector('.navbar-toggler').click();
+        }
+    });
+});
 
 // ============= Gallery Image Placeholder Generator ============= 
 // This function creates placeholder images if real images are not available

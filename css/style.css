@@ -25,6 +25,7 @@ body {
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
+    perspective: 1200px;
 }
 
 /* ============= Hero Section ============= */
@@ -1002,6 +1003,116 @@ body {
     }
 }
 
+/* ============= Page Transition Animations ============= */
+@keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+}
+
+@keyframes pageSlideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes pageSlideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-60px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes pageSlideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%) rotateY(45deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotateY(0);
+    }
+}
+
+@keyframes pageSlideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%) rotateY(-45deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotateY(0);
+    }
+}
+
+@keyframes zoomInPage {
+    from {
+        opacity: 0;
+        transform: scale(0.9) rotateZ(5deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotateZ(0);
+    }
+}
+
+@keyframes blurInPage {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* Section entrance animations */
+section {
+    animation: pageSlideInUp 0.7s ease-out;
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+}
+
+#tentang {
+    animation-delay: 0.1s;
+}
+
+#hobi {
+    animation-delay: 0.15s;
+}
+
+#trik {
+    animation-delay: 0.2s;
+}
+
+#galeri {
+    animation-delay: 0.25s;
+}
+
+#kontak {
+    animation-delay: 0.3s;
+}
+
+/* Scroll Progress Bar */
+#scrollProgress {
+    animation: glow 2s ease-in-out infinite;
+}
+
 /* ============= Footer ============= */
 footer {
     padding: 20px 0;
@@ -1217,3 +1328,108 @@ footer p {
 .bg-light {
     background-color: #f9f9f9 !important;
 }
+
+/* ============= Enhanced Typography Styles ============= */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--dark-color);
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Section Heading Enhancement */
+section h2 {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    position: relative;
+    padding-bottom: 25px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 3px;
+}
+
+/* Text Styling Classes */
+.text-muted {
+    color: #666 !important;
+    font-weight: 500 !important;
+}
+
+.text-dark {
+    color: var(--dark-color) !important;
+    font-weight: 700 !important;
+}
+
+/* Paragraph Styling */
+section p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+/* Card Text Optimization */
+.hobby-card p, 
+.trick-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #555;
+    font-weight: 500;
+}
+
+.hobby-card h4,
+.trick-card h5 {
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+/* About Section Optimization */
+#tentang h3 {
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+    color: var(--dark-color);
+    font-weight: 800;
+}
+
+#tentang p {
+    font-size: 1rem;
+    line-height: 1.8;
+    font-weight: 500;
+    color: #666;
+}
+
+/* Skill Badge Optimization */
+.skill-badge {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+.skill-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
